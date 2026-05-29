@@ -1,0 +1,25 @@
+def integral(f, x):
+    h = 0.000001
+    n = int(x / h)
+    suma = 0
+
+    for i in range(n):
+        t = i * h
+        suma += f(t) * h
+
+    return suma
+
+def derivative(f,x):
+    h = 0.000001                # can't be infinty
+    return (f(x+h)-f(x))/h      # basic math      
+
+def sqr(x):
+    return x*x
+
+def cube(x):
+    return x*x*x
+
+print(integral(sqr,2))
+print(derivative(sqr,3))
+print(integral(cube,2))
+print(derivative(cube,3))
